@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marksheet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ccc;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        #total {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Marksheet</h2>
+        <table>
+            <tr>
+                <th>Exam</th>
+                <th>Subject</th>
+                <th>Marks</th>
+            </tr>
+            <tr>
+                <td rowspan="5">Unit Test 1</td>
+                <td>Computer Network Security</td>
+                <td><input type="number" id="networkSecurityUT1" placeholder="Enter marks"></td>
+            </tr>
+            <tr>
+                <td>Software Engineering</td>
+                <td><input type="number" id="softwareEngineeringUT1" placeholder="Enter marks"></td>
+            </tr>
+            <tr>
+                <td>Advanced Data Structure Algorithms</td>
+                <td><input type="number" id="dataStructureAlgorithmsUT1" placeholder="Enter marks"></td>
+            </tr>
+            <tr>
+                <td>Internet Programming</td>
+                <td><input type="number" id="internetProgrammingUT1" placeholder="Enter marks"></td>
+            </tr>
+            <tr>
+                <td>Entrepreneurship and E-Business</td>
+                <td><input type="number" id="entrepreneurshipUT1" placeholder="Enter marks"></td>
+            </tr>
+            <!-- Add similar rows for Unit Test 2 and Final Exam -->
+            <tr>
+                <td rowspan="5">Unit Test 2</td>
+                <td>Computer Network Security</td>
+                <td><input type="number" id="networkSecurityUT2" placeholder="Enter marks"></td>
+            </tr>
+            <tr>
+                <td>Software Engineering</td>
+                <td><input type="number" id="softwareEngineeringUT2" placeholder="Enter marks"></td>
+            </tr>
+            <tr>
+                <td>Advanced Data Structure Algorithms</td>
+                <td><input type="number" id="dataStructureAlgorithmsUT2" placeholder="Enter marks"></td>
+            </tr>
+            <tr>
+                <td>Internet Programming</td>
+                <td><input type="number" id="internetProgrammingUT2" placeholder="Enter marks"></td>
+            </tr>
+            <tr>
+                <td>Entrepreneurship and E-Business</td>
+                <td><input type="number" id="entrepreneurshipUT2" placeholder="Enter marks"></td>
+            </tr>
+            <tr>
+                <td rowspan="5">End Sem</td>
+                <td>Computer Network Security</td>
+                <td><input type="number" id="networkSecurityES" placeholder="Enter marks"></td>
+            </tr>
+            <tr>
+                <td>Software Engineering</td>
+                <td><input type="number" id="softwareEngineeringES" placeholder="Enter marks"></td>
+            </tr>
+            <tr>
+                <td>Advanced Data Structure Algorithms</td>
+                <td><input type="number" id="dataStructureAlgorithmsES" placeholder="Enter marks"></td>
+            </tr>
+            <tr>
+                <td>Internet Programming</td>
+                <td><input type="number" id="internetProgrammingES" placeholder="Enter marks"></td>
+            </tr>
+            <tr>
+                <td>Entrepreneurship and E-Business</td>
+                <td><input type="number" id="entrepreneurshipES" placeholder="Enter marks"></td>
+            </tr>
+            <!-- ... -->
+        </table>
+        <button onclick="calculateTotal()">Calculate Total</button>
+        <table>
+            <tr>
+                <th>Exam</th>
+                <th>Total Marks</th>
+            </tr>
+            <tr>
+                <td>Unit Test 1</td>
+                <td id="totalUT1"></td>
+            </tr>
+            <!-- Add similar rows for Unit Test 2 and Final Exam -->
+            <tr>
+                <td>Unit Test 2</td>
+                <td id="totalUT2"></td>
+            </tr>
+            <tr>
+                <td>End Sem</td>
+                <td id="totalES"></td>
+            </tr>
+            <!-- ... -->
+            <tr>
+                <td>Overall Total</td>
+                <td id="overallTotal"></td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        function calculateTotal() {
+            // Calculate total marks for Unit Test 1
+            const networkSecurityMarksUT1 = parseFloat(document.getElementById('networkSecurityUT1').value) || 0;
+            const softwareEngineeringMarksUT1 = parseFloat(document.getElementById('softwareEngineeringUT1').value) || 0;
+            const dataStructureAlgorithmsMarksUT1 = parseFloat(document.getElementById('dataStructureAlgorithmsUT1').value) || 0;
+            const internetProgrammingMarksUT1 = parseFloat(document.getElementById('internetProgrammingUT1').value) || 0;
+            const entrepreneurshipMarksUT1 = parseFloat(document.getElementById('entrepreneurshipUT1').value) || 0;
+            const totalMarksUT1 = networkSecurityMarksUT1 + softwareEngineeringMarksUT1 + dataStructureAlgorithmsMarksUT1 +
+                                 internetProgrammingMarksUT1 + entrepreneurshipMarksUT1;
+            document.getElementById('totalUT1').textContent = totalMarksUT1;
+
+            // Add similar calculations for Unit Test 2 and Final Exam
+            const networkSecurityMarksUT2 = parseFloat(document.getElementById('networkSecurityUT2').value) || 0;
+            const softwareEngineeringMarksUT2 = parseFloat(document.getElementById('softwareEngineeringUT2').value) || 0;
+            const dataStructureAlgorithmsMarksUT2 = parseFloat(document.getElementById('dataStructureAlgorithmsUT2').value) || 0;
+            const internetProgrammingMarksUT2= parseFloat(document.getElementById('internetProgrammingUT2').value) || 0;
+            const entrepreneurshipMarksUT2 = parseFloat(document.getElementById('entrepreneurshipUT2').value) || 0;
+            const totalMarksUT2 = networkSecurityMarksUT2 + softwareEngineeringMarksUT2 + dataStructureAlgorithmsMarksUT2 +
+                                 internetProgrammingMarksUT2 + entrepreneurshipMarksUT2;
+            document.getElementById('totalUT2').textContent = totalMarksUT2;
+            const networkSecurityMarksES = parseFloat(document.getElementById('networkSecurityES').value) || 0;
+            const softwareEngineeringMarksES = parseFloat(document.getElementById('softwareEngineeringES').value) || 0;
+            const dataStructureAlgorithmsMarksES = parseFloat(document.getElementById('dataStructureAlgorithmsES').value) || 0;
+            const internetProgrammingMarksES = parseFloat(document.getElementById('internetProgrammingES').value) || 0;
+            const entrepreneurshipMarksES = parseFloat(document.getElementById('entrepreneurshipES').value) || 0;
+            const totalMarksFinal = networkSecurityMarksES + softwareEngineeringMarksES + dataStructureAlgorithmsMarksES +
+                                 internetProgrammingMarksES + entrepreneurshipMarksES;
+            document.getElementById('totalES').textContent = totalMarksFinal;
+
+            // ...
+
+            // Calculate overall total marks
+            const overallTotal = totalMarksUT1 +  totalMarksUT2 + totalMarksFinal  // Add other totals here
+            document.getElementById('overallTotal').textContent = overallTotal;
+        }
+    </script>
+</body>
+</html>
