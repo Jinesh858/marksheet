@@ -142,42 +142,7 @@
         </table>
     </div>
 
-    <script>
-        function calculateTotal() {
-            // Calculate total marks for Unit Test 1
-            const networkSecurityMarksUT1 = parseFloat(document.getElementById('networkSecurityUT1').value) || 0;
-            const softwareEngineeringMarksUT1 = parseFloat(document.getElementById('softwareEngineeringUT1').value) || 0;
-            const dataStructureAlgorithmsMarksUT1 = parseFloat(document.getElementById('dataStructureAlgorithmsUT1').value) || 0;
-            const internetProgrammingMarksUT1 = parseFloat(document.getElementById('internetProgrammingUT1').value) || 0;
-            const entrepreneurshipMarksUT1 = parseFloat(document.getElementById('entrepreneurshipUT1').value) || 0;
-            const totalMarksUT1 = networkSecurityMarksUT1 + softwareEngineeringMarksUT1 + dataStructureAlgorithmsMarksUT1 +
-                                 internetProgrammingMarksUT1 + entrepreneurshipMarksUT1;
-            document.getElementById('totalUT1').textContent = totalMarksUT1;
-
-            // Add similar calculations for Unit Test 2 and Final Exam
-            const networkSecurityMarksUT2 = parseFloat(document.getElementById('networkSecurityUT2').value) || 0;
-            const softwareEngineeringMarksUT2 = parseFloat(document.getElementById('softwareEngineeringUT2').value) || 0;
-            const dataStructureAlgorithmsMarksUT2 = parseFloat(document.getElementById('dataStructureAlgorithmsUT2').value) || 0;
-            const internetProgrammingMarksUT2= parseFloat(document.getElementById('internetProgrammingUT2').value) || 0;
-            const entrepreneurshipMarksUT2 = parseFloat(document.getElementById('entrepreneurshipUT2').value) || 0;
-            const totalMarksUT2 = networkSecurityMarksUT2 + softwareEngineeringMarksUT2 + dataStructureAlgorithmsMarksUT2 +
-                                 internetProgrammingMarksUT2 + entrepreneurshipMarksUT2;
-            document.getElementById('totalUT2').textContent = totalMarksUT2;
-            const networkSecurityMarksES = parseFloat(document.getElementById('networkSecurityES').value) || 0;
-            const softwareEngineeringMarksES = parseFloat(document.getElementById('softwareEngineeringES').value) || 0;
-            const dataStructureAlgorithmsMarksES = parseFloat(document.getElementById('dataStructureAlgorithmsES').value) || 0;
-            const internetProgrammingMarksES = parseFloat(document.getElementById('internetProgrammingES').value) || 0;
-            const entrepreneurshipMarksES = parseFloat(document.getElementById('entrepreneurshipES').value) || 0;
-            const totalMarksFinal = networkSecurityMarksES + softwareEngineeringMarksES + dataStructureAlgorithmsMarksES +
-                                 internetProgrammingMarksES + entrepreneurshipMarksES;
-            document.getElementById('totalES').textContent = totalMarksFinal;
-
-            // ...
-
-            // Calculate overall total marks
-            const overallTotal = totalMarksUT1 +  totalMarksUT2 + totalMarksFinal  // Add other totals here
-            document.getElementById('overallTotal').textContent = overallTotal;
-        }
+    <script src = marksheet.js>
     </script>
 </body>
 </html>
